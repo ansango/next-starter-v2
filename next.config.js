@@ -3,7 +3,6 @@ const { i18n } = require("./next-i18next.config");
 module.exports = {
   experimental: { esmExternals: true },
   reactStrictMode: true,
-  // images: {},
   async headers() {
     return [
       {
@@ -32,8 +31,9 @@ module.exports = {
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
-  style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com cdn.usefathom.com;
+  child-src *.youtube.com *.google.com *.twitter.com;
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
