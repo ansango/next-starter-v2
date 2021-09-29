@@ -12,7 +12,6 @@ module.exports = {
       },
     ];
   },
-  i18n,
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
@@ -23,6 +22,10 @@ module.exports = {
       });
     }
     return config;
+  },
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
   },
 };
 
