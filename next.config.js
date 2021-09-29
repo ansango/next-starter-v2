@@ -12,26 +12,26 @@ module.exports = {
       },
     ];
   },
+  webpack: (config, { dev, isServer }) => {
+    // Replace React with Preact only in client production build
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: "preact/compat",
+        "react-dom/test-utils": "preact/test-utils",
+        "react-dom": "preact/compat",
+      });
+    }
+    return config;
+  },
   i18n,
-  // webpack: (config, { dev, isServer }) => {
-  //   // Replace React with Preact only in client production build
-  //   if (!dev && !isServer) {
-  //     Object.assign(config.resolve.alias, {
-  //       react: "preact/compat",
-  //       "react-dom/test-utils": "preact/test-utils",
-  //       "react-dom": "preact/compat",
-  //     });
-  //   }
-
-  //   return config;
-  // },
 };
 
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
-  style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com cdn.usefathom.com;
+  child-src *.youtube.com *.google.com *.twitter.com;
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
