@@ -1,11 +1,13 @@
-import { writeFileSync } from "fs";
+import { writeFile } from "fs";
 import { globby } from "globby";
 import prettier from "prettier";
 
-const BASE = "https://";
+const BASE = "https://nextstarter.js";
 
 async function generate() {
+  console.log("-> ! Generating sitemap...\n");
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
+  console.log("-> ! Getting files...\n");
   const pages = await globby([
     "pages/*.tsx",
     "data/**/*.mdx",
@@ -41,9 +43,16 @@ async function generate() {
     ...prettierConfig,
     parser: "html",
   });
-
+  console.log("-> ! Sitemap formatted: \n", formatted);
+  console.log("-> ! Writing sitemap.xml...\n");
   // eslint-disable-next-line no-sync
-  writeFileSync("public/sitemap.xml", formatted);
+  writeFile("public/sitemap.xml", formatted, (err) => {
+    if (err) {
+      console.error(`-> ! ${err}`);
+    } else {
+      console.log("-> ! Sitemap generated.");
+    }
+  });
 }
 
 generate();
