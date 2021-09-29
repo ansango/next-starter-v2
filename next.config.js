@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const { i18n } = require("./next-i18next.config");
 module.exports = {
   experimental: { esmExternals: true },
   reactStrictMode: true,
@@ -11,6 +12,7 @@ module.exports = {
       },
     ];
   },
+  i18n,
   // webpack: (config, { dev, isServer }) => {
   //   // Replace React with Preact only in client production build
   //   if (!dev && !isServer) {
