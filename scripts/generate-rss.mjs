@@ -35,7 +35,7 @@ async function generate() {
     } else {
       console.log("-> ! RSS generated.");
     }
-  });aa
+  });
 }
 
 generate();
