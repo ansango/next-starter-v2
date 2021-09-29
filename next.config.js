@@ -3,6 +3,7 @@ const { i18n } = require("./next-i18next.config");
 module.exports = {
   experimental: { esmExternals: true },
   reactStrictMode: true,
+  // images: {},
   async headers() {
     return [
       {
@@ -22,10 +23,7 @@ module.exports = {
     }
     return config;
   },
-  i18n: {
-    defaultLocale: "es",
-    locales: ["es", "en"],
-  },
+  i18n,
 };
 
 // https://securityheaders.com
