@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build && node ./scripts/generate-rss.mjs && node ./scripts/generate-sitemap.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "next": "11.1.2",
