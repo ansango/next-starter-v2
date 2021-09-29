@@ -14,13 +14,7 @@ const BASE = {
 };
 
 async function generate() {
-  console.log("-> ! Generating RSS...\n");
-  console.log("-> ! Reading Base Config...\n");
-  console.log("-> ! Base Config:\n");
-  console.log(BASE);
-  console.log("\n");
   const feed = new RSS(BASE);
-  console.log("-> ! Reading posts...\n");
   const posts = readdirSync(join(process.cwd(), "data", "blog"));
   posts.map((name) => {
     const content = readFileSync(join(process.cwd(), "data", "blog", name));

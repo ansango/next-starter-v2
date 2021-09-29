@@ -5,9 +5,7 @@ import prettier from "prettier";
 const BASE = "https://nextstarter.js";
 
 async function generate() {
-  console.log("-> ! Generating Sitemap...\n");
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
-  console.log("-> ! Getting files...\n");
   const pages = await globby([
     "pages/*.tsx",
     "data/**/*.mdx",
@@ -43,7 +41,6 @@ async function generate() {
     ...prettierConfig,
     parser: "html",
   });
-  console.log("-> ! Sitemap formatted: \n", formatted);
   console.log("-> ! Writing sitemap.xml...\n");
   // eslint-disable-next-line no-sync
   writeFile("public/sitemap.xml", formatted, (err) => {
