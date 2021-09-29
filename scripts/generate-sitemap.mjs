@@ -5,7 +5,7 @@ import prettier from "prettier";
 const BASE = "https://nextstarter.js";
 
 async function generate() {
-  console.log("-> ! Generating sitemap...\n");
+  console.log("-> ! Generating Sitemap...\n");
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
   console.log("-> ! Getting files...\n");
   const pages = await globby([
