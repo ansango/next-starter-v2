@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, writeFileSync } from "fs";
+import { readFileSync, readdirSync, writeFile } from "fs";
 import { join } from "path";
 import RSS from "rss";
 import matter from "gray-matter";
@@ -14,8 +14,13 @@ const BASE = {
 };
 
 async function generate() {
+  console.log("-> ! Generating RSS...\n");
+  console.log("-> ! Reading Base Config...\n");
+  console.log("-> ! Base Config:\n");
+  console.log(BASE);
+  console.log("\n");
   const feed = new RSS(BASE);
-
+  console.log("-> ! Reading posts...\n");
   const posts = readdirSync(join(process.cwd(), "data", "blog"));
   posts.map((name) => {
     const content = readFileSync(join(process.cwd(), "data", "blog", name));
@@ -29,7 +34,14 @@ async function generate() {
     });
   });
 
-  writeFileSync("./public/feed.xml", feed.xml({ indent: true }));
+  console.log("-> ! Writing RSS...\n");
+  writeFile("./public/feed.xml", feed.xml({ indent: true }), (err) => {
+    if (err) {
+      console.error(`-> ! ${err}`);
+    } else {
+      console.log("-> ! RSS generated.");
+    }
+  });
 }
 
 generate();
