@@ -11,5 +11,5 @@
     "lint-staged": "Linters su git staged",
     "next-localization": "Internazionalizzazione leggera"
   },
-  "description": "configurazione iniziale"
+  "description": "Configurazione iniziale"
 }
