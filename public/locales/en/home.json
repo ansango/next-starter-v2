@@ -6,11 +6,10 @@
     "husky": "Modern native Git hooks",
     "eslint": "Code quality",
     "sitemap": "Sitemap ready on deploy",
-    "i18nexus": "Automate your translations",
     "prettier": "Code formatter",
     "typescript": "JavaScript superset",
     "lint-staged": "Linters in git staged files",
-    "next-i18next": "Translate NextJs applications."
+    "next-localization": "Lightweight Internationalization"
   },
   "description": "Starter configuration"
 }

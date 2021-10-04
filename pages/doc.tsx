@@ -5,7 +5,7 @@ import styles from "styles/Home.module.css";
 import tools from "lib/mock/tools";
 import { useI18n } from "next-localization";
 
-const Home: NextPage = () => {
+const Doc: NextPage = () => {
   const { t } = useI18n();
   const tTools = t("tools");
   return (
@@ -42,4 +42,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-export default Home;
+export default Doc;

@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const { i18n } = require("./next-i18next.config");
+
 module.exports = {
   experimental: { esmExternals: true },
   reactStrictMode: true,
@@ -23,7 +23,11 @@ module.exports = {
     }
     return config;
   },
-  i18n,
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en", "it"],
+    localeDetection: false,
+  },
 };
 
 // https://securityheaders.com
