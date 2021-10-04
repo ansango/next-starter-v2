@@ -62,3 +62,19 @@
   font-size: 1.25rem;
   line-height: 1.5;
 }
+
+.performance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.performance a {
+  color: #0070f3;
+  font-size: 1.5rem;
+}
+
+.performance a:hover {
+  text-decoration: underline;
+}

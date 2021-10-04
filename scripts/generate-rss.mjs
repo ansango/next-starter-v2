@@ -16,6 +16,7 @@ const BASE = {
 async function generate() {
   const feed = new RSS(BASE);
   const posts = readdirSync(join(process.cwd(), "data", "blog"));
+  // eslint-disable-next-line array-callback-return
   posts.map((name) => {
     const content = readFileSync(join(process.cwd(), "data", "blog", name));
     const frontmatter = matter(content);

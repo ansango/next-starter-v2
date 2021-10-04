@@ -11,5 +11,6 @@
     "lint-staged": "Linters in git staged files",
     "next-localization": "Lightweight Internationalization"
   },
-  "description": "Starter configuration"
+  "description": "Starter configuration",
+  "performance": "100% in PageSpeed Insights"
 }

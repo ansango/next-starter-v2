@@ -1,9 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
+import { useI18n } from "next-localization";
 import PageSeo from "components/seo/PageSeo";
-
 import styles from "styles/Home.module.css";
 import tools from "lib/mock/tools";
-import { useI18n } from "next-localization";
 
 const Home: NextPage = () => {
   const { t } = useI18n();
@@ -11,7 +10,6 @@ const Home: NextPage = () => {
   return (
     <>
       <PageSeo title="Next.js starter" description="A Next.js Starter" />
-
       <main className={styles.main}>
         <h1 className={styles.title}>{t("title")}</h1>
         <p className={styles.description}>{t("description")}</p>
@@ -27,6 +25,15 @@ const Home: NextPage = () => {
             );
           })}
         </ul>
+        <div className={styles.performance}>
+          <a
+            href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnext-starter-v2.vercel.app%2F&tab=mobile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("performance")}
+          </a>
+        </div>
       </main>
     </>
   );
