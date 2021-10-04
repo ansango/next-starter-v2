@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Starter v2
+
+## What includes?
+
+- Next.js
+- Typescript,
+- ESLint
+- Prettier
+- Husky
+- Lint-Staged
+- Next Localization
+- Sitemap Generator
+- RSS Generator
 
 ## Getting Started
 
