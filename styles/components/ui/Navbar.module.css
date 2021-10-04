@@ -8,11 +8,10 @@
 .navbar ul {
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
 }
 
-.navbar a {
-  text-transform: uppercase;
-  margin: 0 1rem;
+.navbar ul > * {
+  list-style: none;
+  margin-right: 0.5rem;
 }

@@ -1,0 +1,16 @@
+{
+  "title": "Ciao! benvenuto a Next Starter",
+  "tools": {
+    "rss": "Feed sempre pronto",
+    "next": "Il framework React",
+    "husky": "Modern Git Hooks",
+    "eslint": "Un code migliore",
+    "sitemap": "Sitemap sempre pronto",
+    "prettier": "Scrivi sempre bene",
+    "typescript": "Javascript superset",
+    "lint-staged": "Linters su git staged",
+    "next-localization": "Internazionalizzazione leggera"
+  },
+  "description": "Configurazione iniziale",
+  "performance": "100% su PageSpeed Insights"
+}

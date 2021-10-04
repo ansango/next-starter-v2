@@ -6,11 +6,11 @@
     "husky": "Git Hooks modernos",
     "eslint": "Calidad del código",
     "sitemap": "Sitemap listo en cada despliegue",
-    "i18nexus": "Automatice tus traducciones",
     "prettier": "Formateador de código",
     "typescript": "Superconjunto de JavaScript",
     "lint-staged": "Linters en git staged",
-    "next-i18next": "Traduce aplicaciones NextJs."
+    "next-localization": "Internacionalización ligera"
   },
-  "description": "Configuración del starter"
+  "description": "Configuración del starter",
+  "performance": "100% en PageSpeed Insights"
 }
